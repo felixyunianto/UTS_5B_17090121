@@ -148,7 +148,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="index.php?page=dosen">
                                 <i class="fas fa-user-tie"></i>
                                 <span> Dosen </span>
                             </a>
@@ -231,7 +231,56 @@
         <!-- ============================================================== -->
         <!-- End Page content -->
         <!-- ============================================================== -->
+		
+        <div class="content-page">
+            <div class="content">
 
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    <?php
+        if(isset($_GET['page'])){
+            $page = $_GET['page'];
+                     
+                            switch ($page) {
+                                case 'dosen':
+                                    include "./halaman/dosen/dosen.php";
+                                    break;
+                                case "tambahdata":
+                                    include "./halaman/dosen/tambah_data.php";
+                                    break;    
+                                case 'edit_modal': 
+                                    include "./halaman/dosen/edit_modal.php";
+                                    break;		
+                                default:
+                                    echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";
+                                    break;
+                            }
+                        }else{
+                            include "./halaman/dosen/dosen.php";
+                        }
+                    ?>
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            2019 &copy; Politeknik Harapan Bersama
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+		<!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
 
     </div>
 
